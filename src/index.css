@@ -1,11 +1,76 @@
+.header {
+  overflow: hidden;
+  background-color: #5b7c8e;
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 20px;
+  width: 900px;
+  height: 150px;
+  font-family: monospace;
+  font-size: 40px;
+  text-align: left;
+
+}
+.board-container {
+  background: white;
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 20px;
+  width: 200px;
+  height: 500px;
+
+
+}
+.box {
+      position: right;
+      width: '600px';
+      height: '400px';
+      background: white;
+      border-radius: 25px;
+      border: 2px solid black;
+      padding: 20px;
+      width: 600px;
+      height: 500px;
+      font-family: monospace;
+      text-align: left;
+
+      margin-left: 220px
+
+}
+
+.photos {
+  display: inline-block;
+
+}
 body {
+  background-color: #c7d4db;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
+}
+.photo-container {
+min-width: 150px;
+margin: auto;
+justify-content: space-evenly;
+border-radius: 25px;
+border: 2px solid black;
+padding: 20px;
+width: 1000;
+height: 300px;
+background: white;
+}
+
+
+.board-list {
+
+  justify-content: space-evenly;
+  background-color: white;
+
+  font-family: monospace;
 }
 
 code {

@@ -5,22 +5,17 @@ import v4 from 'uuid'
 class WorkingBoard extends Component {
 
   render() {
-    let styles = {
-      margin: '20px',
-      width: '400px',
-      height: '400px',
-      backgroundColor: 'grey',
-    };
-    // console.log(this.props.images.map(image => image.id));
+
+    console.log(this.props.images)
     return (
 
 
 
-      <div className= 'box' style= {styles}>
+      <div className= 'box'>
         <h1> Working Board </h1>
         {this.props.images.map(image => <Photo key= {v4()} image= {image} placeImageOnBoard= {this.props.placeImageOnBoard}/>)}
 
-        <button> Save </button>
+        <button className="btn btn-outline-dark" onClick= {this.props.saveBoard}> Save </button>
       </div>
     );
   }

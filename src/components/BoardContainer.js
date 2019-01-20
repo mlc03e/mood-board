@@ -9,9 +9,9 @@ class BoardContainer extends Component {
   render() {
     // console.log(this.props.boards)
     return (
-      <div>
-        {this.props.boards.map(board => <Board key= {v4()} board= {board} showBoard= {this.props.showBoard}/>)}
-        <button onClick= {this.props.createBoard}> Create New Board </button>
+      <div className='board-container'>
+        {this.props.boards.map(board => <Board key= {v4()} board= {board} showBoard= {this.props.showBoard} images= {this.props.workingBoard}/>)}
+        <button className="btn btn-outline-dark" onClick= {this.props.createBoard}> Create New Board </button>
       </div>
     );
   }

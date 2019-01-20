@@ -28,10 +28,10 @@ class Form extends Component {
     return (
       <form onSubmit= {this.handleSubmit}>
         <p> Image URL </p>
-        <input type="text" onChange= {this.handleNewImg} value= {this.state.imageURL}/>
+        <input className="btn btn-outline-dark" type="text" onChange= {this.handleNewImg} value= {this.state.imageURL}/>
         <p> Key Words </p>
-        <input type="text" onChange= {this.handleKeyWords} value= {this.state.keyWords}/>
-        <input type="submit"/>
+        <input className="btn btn-outline-dark" type="text" onChange= {this.handleKeyWords} value= {this.state.keyWords}/>
+        <input className="btn btn-outline-dark" type="submit"/>
       </form>
     );
   }

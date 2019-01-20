@@ -11,7 +11,9 @@ class PhotoBoardContainer extends Component {
     images: [],
     boards: [],
     workingBoard: [],
-    boardImage: []
+    boardImage: [],
+    startIdx: 0,
+    endIdx: 4
   }
   componentDidMount() {
     Promise.all([
@@ -73,20 +75,37 @@ class PhotoBoardContainer extends Component {
     })
   }
   }
-  // removeImageFromBoard = (imageId) => {
-  //
-  //   this.setState({
-  //     workingBoard: filteredImage
-  //
-  //   })
-  // }
+  handleLeftDisplay = () => {
+    this.setState(previousState => {
+      return {
+      startIdx: previousState.startIdx + 1,
+      endIdx: previousState.endIdx + 1
+      }
+    })
+  }
+  handleRightDisplay = () => {
+    this.setState(previousState => {
+      return {
+      startIdx: previousState.startIdx - 1,
+      endIdx: previousState.endIdx - 1
+      }
+    })
+  }
+  saveBoard= () => {
+    this.setState ({
+      boards: [...this.state.boards, this.state.workingBoard]
+    })
+  }
+
   render() {
     return (
-      <div>
-        <BoardContainer boards= {this.state.boards} createBoard= {this.createBoard} showBoard= {this.showBoard}/>
+      <div >
+
+        <BoardContainer boards= {this.state.boards} images= {this.state.workingBoard} createBoard= {this.createBoard} showBoard= {this.showBoard}/>
+        <WorkingBoard images= {this.state.workingBoard} placeImageOnBoard= {this.placeImageOnBoard} showBoard= {this.showBoard} saveBoard= {this.saveBoard}/>
         <Form newImage= {this.newImage}/>
-        <PhotoContainer images= {this.state.images}  placeImageOnBoard= {this.placeImageOnBoard}/>
-        <WorkingBoard images= {this.state.workingBoard} placeImageOnBoard= {this.placeImageOnBoard} />
+        <PhotoContainer handleLeftDisplay= {this.handleLeftDisplay} handleRightDisplay= {this.handleRightDisplay} images= {this.state.images.slice(this.state.startIdx, this.state.endIdx)}  placeImageOnBoard= {this.placeImageOnBoard} showBoard= {this.showBoard}/>
+
 
       </div>
     );

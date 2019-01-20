@@ -7,9 +7,9 @@ class Board extends Component {
     // console.log(this.props.board)
 
     return (
-      <div >
+      <div className= 'board-list' >
 
-        <li onClick={()=>this.props.showBoard(this.props.board.title)}> {this.props.board.title} </li>
+        <p onClick={()=>this.props.showBoard(this.props.board)}> {this.props.board.title} </p>
       </div>
     );
   }
