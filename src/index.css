@@ -4,25 +4,43 @@
   border-radius: 25px;
   border: 2px solid black;
   padding: 20px;
-  width: 900px;
+  width: absolute;
   height: 150px;
   font-family: monospace;
   font-size: 40px;
   text-align: left;
 
 }
+.parent {
+  width: inherit;
+  display: inline-grid;
+}
 .board-container {
+  margin-left: 0px;
   background: white;
   border-radius: 25px;
   border: 2px solid black;
   padding: 20px;
   width: 200px;
   height: 500px;
+  display: inline-grid;
 
 
 }
+.form {
+  position: inherit;
+  bottom: 200px;
+  margin: 400px;
+  width: '250px';
+  height: '300px';
+  background: white;
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 10px;
+}
 .box {
-      position: right;
+      margin: 220px;
+      overflow: hidden;
       width: '600px';
       height: '400px';
       background: white;
@@ -33,8 +51,10 @@
       height: 500px;
       font-family: monospace;
       text-align: left;
+      display: inline-block;
+      position: right;
+      top: 200px;
 
-      margin-left: 220px
 
 }
 
@@ -53,15 +73,17 @@ body {
 
 }
 .photo-container {
-min-width: 150px;
+min-width: absolute;
 margin: auto;
 justify-content: space-evenly;
 border-radius: 25px;
 border: 2px solid black;
 padding: 20px;
-width: 1000;
+width: absolute;
 height: 300px;
 background: white;
+position: inherit;
+bottom: 100;
 }
 
 

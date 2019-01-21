@@ -27,9 +27,7 @@ class PhotoBoardContainer extends Component {
     }))
   }
   newImage= (URL, keyWords) => {
-    console.log(v4());
     const newPic = {id: v4(), url: URL, keyWords: keyWords.split(',')}
-    console.log(newPic);
     this.setState({
       images: [...this.state.images, newPic]
     })
@@ -91,18 +89,28 @@ class PhotoBoardContainer extends Component {
       }
     })
   }
-  saveBoard= () => {
-    this.setState ({
-      boards: [...this.state.boards, this.state.workingBoard]
-    })
+
+  addSaveBoard= (event) => {
+    console.log(event.target)
+  //   fetch(`http://localhost:3000/boards/${boards.id}`, {method: 'PATCH',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Accept': 'application/json'
+  //     },
+  //     body: JSON.stringify({
+  //
+  //     })
+  //   })
+  //   .then(response => response.json())
+  //   .then(board=> console.log(board))
   }
 
   render() {
     return (
-      <div >
+      <div className= 'parent'>
 
         <BoardContainer boards= {this.state.boards} images= {this.state.workingBoard} createBoard= {this.createBoard} showBoard= {this.showBoard}/>
-        <WorkingBoard images= {this.state.workingBoard} placeImageOnBoard= {this.placeImageOnBoard} showBoard= {this.showBoard} saveBoard= {this.saveBoard}/>
+        <WorkingBoard images= {this.state.workingBoard} placeImageOnBoard= {this.placeImageOnBoard} showBoard= {this.showBoard} addSaveBoard= {this.addSaveBoard}/>
         <Form newImage= {this.newImage}/>
         <PhotoContainer handleLeftDisplay= {this.handleLeftDisplay} handleRightDisplay= {this.handleRightDisplay} images= {this.state.images.slice(this.state.startIdx, this.state.endIdx)}  placeImageOnBoard= {this.placeImageOnBoard} showBoard= {this.showBoard}/>
 

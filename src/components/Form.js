@@ -26,7 +26,7 @@ class Form extends Component {
 
   render() {
     return (
-      <form onSubmit= {this.handleSubmit}>
+      <form className= 'form' onSubmit= {this.handleSubmit}>
         <p> Image URL </p>
         <input className="btn btn-outline-dark" type="text" onChange= {this.handleNewImg} value= {this.state.imageURL}/>
         <p> Key Words </p>
