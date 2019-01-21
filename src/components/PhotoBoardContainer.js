@@ -54,7 +54,10 @@ class PhotoBoardContainer extends Component {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.stringify()
+      body: JSON.stringify({
+        title: [],
+        images: []
+      })
     })
     .then(response => response.json())
     .then(newBoard=> this.setState({
@@ -91,26 +94,26 @@ class PhotoBoardContainer extends Component {
   }
 
   addSaveBoard= (event) => {
-    console.log(event.target)
-  //   fetch(`http://localhost:3000/boards/${boards.id}`, {method: 'PATCH',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'Accept': 'application/json'
-  //     },
-  //     body: JSON.stringify({
-  //
-  //     })
-  //   })
-  //   .then(response => response.json())
-  //   .then(board=> console.log(board))
+    // console.log(this.state.workingBoard.id)
+    fetch(`http://localhost:3000/boards/${this.state.workingBoard.id}`, {method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        title: event
+      })
+    })
+    .then(response => response.json())
+    .then(board=> console.log(board))
   }
 
   render() {
     return (
       <div className= 'parent'>
 
-        <BoardContainer boards= {this.state.boards} images= {this.state.workingBoard} createBoard= {this.createBoard} showBoard= {this.showBoard}/>
-        <WorkingBoard images= {this.state.workingBoard} placeImageOnBoard= {this.placeImageOnBoard} showBoard= {this.showBoard} addSaveBoard= {this.addSaveBoard}/>
+        <BoardContainer boards= {this.state.boards} images= {this.state.images} createBoard= {this.createBoard} showBoard= {this.showBoard}/>
+        <WorkingBoard board= {this.state.workingBoard} images= {this.state.images} placeImageOnBoard= {this.placeImageOnBoard} showBoard= {this.showBoard} addSaveBoard= {this.addSaveBoard} />
         <Form newImage= {this.newImage}/>
         <PhotoContainer handleLeftDisplay= {this.handleLeftDisplay} handleRightDisplay= {this.handleRightDisplay} images= {this.state.images.slice(this.state.startIdx, this.state.endIdx)}  placeImageOnBoard= {this.placeImageOnBoard} showBoard= {this.showBoard}/>
 

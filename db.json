@@ -182,11 +182,14 @@
     {
       "id": 1,
       "title": "Back to the Future",
-      "images": [
+      "image_ids": [
         "6720c750-32b0-4835-b016-c7df99770819",
         "94f81396-6595-4367-a4be-d5802440134a",
         "f70c4013-532c-4894-9cb2-daef546559de",
         "a722d183-6c7a-4757-af0e-377922929920"
+      ],
+      "image_urls": [
+        "https://images-na.ssl-images-amazon.com/images/I/71p8seGXkyL._UX385_.jpg"
       ]
     },
     {
@@ -219,12 +222,18 @@
       ]
     },
     {
+      "title": [],
+      "images": [],
       "id": 5
     },
     {
+      "title": [],
+      "images": [],
       "id": 6
     },
     {
+      "title": [],
+      "images": [],
       "id": 7
     }
   ]
