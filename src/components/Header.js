@@ -4,7 +4,11 @@ class Header extends Component {
 
   render() {
     return (
-      <div>Header</div>
+      <div className= 'header'>
+        <h1> P </h1>
+        <img id= 'eye' src={require('./circle.png')} alt='eye' />
+        <h1>V</h1>
+      </div>
     );
   }
 
