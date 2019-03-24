@@ -9,7 +9,7 @@ class Board extends Component {
     return (
       <div className= 'board-list' >
 
-        <p onClick={()=>this.props.showBoard(this.props.board)}> {this.props.board.title} </p>
+        <h3 onClick={()=>this.props.showBoard(this.props.board)}> {this.props.board.title} </h3>
       </div>
     );
   }

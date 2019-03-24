@@ -27,10 +27,8 @@ class Form extends Component {
   render() {
     return (
       <form className= 'form' onSubmit= {this.handleSubmit}>
-        <p> Image URL </p>
-        <input className="btn btn-outline-dark" type="text" onChange= {this.handleNewImg} value= {this.state.imageURL}/>
-        <p> Key Words </p>
-        <input className="btn btn-outline-dark" type="text" onChange= {this.handleKeyWords} value= {this.state.keyWords}/>
+        <input className="btn btn-outline-dark" type="text" onChange= {this.handleNewImg} value= {this.state.imageURL} placeholder= 'Add image'/>
+        <input className="btn btn-outline-dark" type="text" onChange= {this.handleKeyWords} value= {this.state.keyWords} placeholder= 'Add keywords'/>
         <input className="btn btn-outline-dark" type="submit"/>
       </form>
     );
